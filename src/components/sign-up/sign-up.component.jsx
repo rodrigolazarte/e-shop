@@ -10,18 +10,18 @@ import './sign-up.styles.scss';
 class SignUp extends React.Component {
     constructor(){
         super();
-        state = { 
+        this.state = { 
             displayName: '',
-            email = '',
-            password = '',
-            confirmPassword = ''
+            email: '',
+            password: '',
+            confirmPassword: ''
          }
     }
 
     handleSubmit = async event => {
         event.preventDefault();
         const {displayName, email, password, confirmPassword} = this.state;
-        if(password != confirmPassword){
+        if(password !== confirmPassword){
             alert("Password don't match");
             return;
         }
@@ -31,9 +31,9 @@ class SignUp extends React.Component {
             //Clean the form setting state to empty again
             this.setState({ 
                 displayName: '',
-                email = '',
-                password = '',
-                confirmPassword = ''
+                email: '',
+                password: '',
+                confirmPassword: ''
              });
         }
         catch(error){
@@ -72,7 +72,7 @@ class SignUp extends React.Component {
                     <FormInput
                         type='password'
                         name='password'
-                        value = {displayName}
+                        value = {password}
                         onChange={this.handleChange}
                         label='Password'
                     >
